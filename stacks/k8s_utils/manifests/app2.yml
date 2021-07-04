@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app2
+  namespace: miztiik-automation-ns
+spec:
+  containers:
+  - name: app2
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo $(date -u) >> /data/out2.txt; sleep 5; done"]
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /data
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: efs-storage-claim

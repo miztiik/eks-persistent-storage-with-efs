@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k-shop-reader
+  namespace: miztiik-automation-ns
+  labels:
+    project: eks-persistent-storage-with-efs
+    app: k-shop-reader
+    role: reader
+spec:
+  containers:
+  - name: k-shop-reader
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do sleep 5; done"]
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /shared
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: efs-storage-claim

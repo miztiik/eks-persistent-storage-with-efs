@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: miztiik-automation-ns
+  labels:
+    name: miztiik-automation-ns
+    dept: engineering
+    team: red-shirts
+    project: eks-security-with-security-groups
+  annotations:
+    contact: github.com/miztiik
