@@ -4,13 +4,13 @@ The developer at Mystique Unicorn are interested in building their application u
 
 In this application, Kubernetes has been chosen as the platform to host their application producing and consuming events. Some of the consumers have to share their state between them. They would like to have persistent storage accessible to their pods in kubernetes. Can you help them achieve this?
 
-![Miztiik Automation: Kubernetes(EKS) Persistent Storage With EFS Amazon Service](images/eks_persistent_storage_with_efs_architecture_00.png)
-
 ## 🎯 Solutions
 
 **Amazon Elastic File System:** Amazon EFS<sup>[2]</sup> lets you share file data without provisioning or managing storage and can be used with AWS Cloud services. With Amazon EFS, you can grow and shrink your file systems automatically as you add and remove files, eliminating the need to provision and manage capacity to accommodate growth. The Amazon EFS Container Storage Interface (CSI)<sup>[3]</sup> driver provides a CSI interface that allows Kubernetes clusters running on AWS to manage the lifecycle of Amazon EFS file systems.
 
 **Kubernetes Persistent storage Overview**
+
+![Miztiik Automation: Kubernetes(EKS) Persistent Storage With EFS Amazon Service](images/eks_persistent_storage_with_efs_architecture_01.png)
 
 - **Persistent volume claims(PVCs):**
   Managing storage is a distinct problem from managing compute instances. The _PersistentVolume_ subsystem provides an API for users and administrators that abstracts details of how storage is provided from how it is consumed. Cluster administrators can use Kubernetes persistent volume (PV)<sup>[1]</sup> to provision persistent storage for a cluster. Developers can use persistent volume claims (PVCs) to request PV resources without having specific knowledge of the underlying storage infrastructure.
@@ -25,6 +25,8 @@ In this application, Kubernetes has been chosen as the platform to host their ap
   Once you have a claim and that claim is bound, the bound PV belongs to you for as long as you need it. You can schedule Pods and access claimed PVs by including `persistentVolumeClaim` in the Pod’s volumes block.
 
 In this blog, I will show how to deploy EFS with application specific access points and statically bind them for pod usage.
+
+![Miztiik Automation: Kubernetes(EKS) Persistent Storage With EFS Amazon Service](images/eks_persistent_storage_with_efs_architecture_00.png)
 
 1. ## 🧰 Prerequisites
 
