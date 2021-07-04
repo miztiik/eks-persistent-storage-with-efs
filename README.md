@@ -308,6 +308,7 @@ In this blog, I will show how to deploy EFS with application specific access poi
       Let us find out more details about our volume,
 
       ```bash
+      manifests]# kubectl describe pv
       Name:            efs-pv
       Labels:          <none>
       Annotations:     pv.kubernetes.io/bound-by-controller: yes
