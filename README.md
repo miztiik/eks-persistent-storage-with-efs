@@ -26,7 +26,7 @@ In this application, Kubernetes has been chosen as the platform to host their ap
 
 In this blog, I will show how to deploy EFS with application specific access points and statically bind them for pod usage.
 
-![Miztiik Automation: Kubernetes(EKS) Persistent Storage With EFS Amazon Service](images/eks_persistent_storage_with_efs_architecture_00.png)
+![Miztiik Automation: Kubernetes(EKS) Persistent Storage With EFS Amazon Service](images/eks_persistent_storage_with_efs_architecture_02.png)
 
 1. ## 🧰 Prerequisites
 
